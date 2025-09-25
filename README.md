@@ -13,7 +13,22 @@ When downloading APK files from CircleCI artifacts:
 
 ## 🚀 Installation
 
-### Option 1: pip Install (Recommended)
+### Option 1: pipx Install (Recommended - No venv issues!)
+
+```bash
+# Install pipx (one-time setup)
+sudo apt install pipx python3-venv
+pipx ensurepath
+
+# Install FixPipeline (works like any professional software)
+pipx install git+https://github.com/subhadip-unn/FixPipeline.git
+
+# Then use
+fixpipeline              # System tray app
+fixpipeline --gui         # Manual GUI tool
+```
+
+### Option 1b: pip Install (Alternative)
 
 ```bash
 # Install from GitHub (works like any pip package)
@@ -97,7 +112,18 @@ The system-level `os.rename()` operation properly updates file metadata, making 
 
 ### Easy Installation (No Technical Knowledge Required)
 
-**Option A: pip Install (Recommended)**
+**Option A: pipx Install (Recommended - No venv issues!)**
+```bash
+# One-time setup
+sudo apt install pipx python3-venv
+pipx ensurepath
+
+# Install FixPipeline
+pipx install git+https://github.com/subhadip-unn/FixPipeline.git
+fixpipeline
+```
+
+**Option A2: pip Install (Alternative)**
 ```bash
 pip install git+https://github.com/subhadip-unn/FixPipeline.git
 fixpipeline
