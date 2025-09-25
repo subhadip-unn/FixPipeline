@@ -1,0 +1,46 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y python3-all debhelper dpkg-dev
+    
+    - name: Install Python dependencies
+      run: |
+        pip install setuptools wheel stdeb
+    
+    - name: Build .deb package
+      run: |
+        python setup.py --command-packages=stdeb.command bdist_deb
+    
+    - name: Upload .deb artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: fixpipeline-deb
+        path: deb_dist/*.deb
+    
+    - name: Create Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: deb_dist/*.deb
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

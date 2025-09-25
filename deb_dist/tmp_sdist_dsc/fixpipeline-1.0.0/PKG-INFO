@@ -1,3 +1,43 @@
+Metadata-Version: 2.4
+Name: fixpipeline
+Version: 1.0.0
+Summary: Professional tool to automatically convert CircleCI APK downloads from .zip to .apk
+Home-page: https://github.com/subhadip-unn/FixPipeline
+Author: QA Team
+Author-email: qa@company.com
+Project-URL: Bug Reports, https://github.com/subhadip-unn/FixPipeline/issues
+Project-URL: Source, https://github.com/subhadip-unn/FixPipeline
+Keywords: circleci,apk,android,qa,testing,automation,fixpipeline
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pystray>=0.19.4
+Requires-Dist: pillow>=9.0.0
+Requires-Dist: plyer>=2.1.0
+Requires-Dist: watchdog>=2.1.0
+Requires-Dist: psutil>=5.9.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
 # FixPipeline
 
 **Professional CircleCI APK Auto-Fixer**
@@ -27,7 +67,7 @@ fixpipeline --gui         # Manual GUI tool
 ### Option 2: .deb Package (Linux)
 
 ```bash
-# Download .deb from GitHub Releases (after v1.0.0 release)
+# Download .deb from GitHub Releases
 wget https://github.com/subhadip-unn/FixPipeline/releases/latest/download/fixpipeline_1.0.0-1_all.deb
 
 # Install like any software

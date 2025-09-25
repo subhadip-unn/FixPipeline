@@ -1,0 +1,33 @@
+Source: fixpipeline
+Maintainer: None <None>
+Section: python
+Priority: optional
+Build-Depends: python3-setuptools, python3-all, debhelper (>= 12)
+Standards-Version: 4.7.0
+Homepage: https://github.com/subhadip-unn/FixPipeline
+
+Package: python3-fixpipeline
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Description: Professional tool to automatically convert CircleCI APK down
+ # FixPipeline
+ .
+ **Professional CircleCI APK Auto-Fixer**
+ .
+ Automatically converts CircleCI APK downloads from `.zip` to `.apk` files for QA teams.
+ .
+ ## 🎯 Problem Solved
+ .
+ When downloading APK files from CircleCI artifacts:
+ - Chrome/Firefox save them as `.zip` files
+ - Manual renaming doesn't work for installation
+ - QA teams need to test 4 specific files repeatedly
+ .
+ ## 🚀 Installation
+ .
+ ### Option 1: pip Install (Recommended)
+ .
+ ```bash
+ # Install from GitHub (works like any pip package)
+ pip install git+https://github.com/subhadip-unn/FixPipeline.git
+

@@ -27,7 +27,7 @@ fixpipeline --gui         # Manual GUI tool
 ### Option 2: .deb Package (Linux)
 
 ```bash
-# Download .deb from GitHub Releases (after v1.0.0 release)
+# Download .deb from GitHub Releases
 wget https://github.com/subhadip-unn/FixPipeline/releases/latest/download/fixpipeline_1.0.0-1_all.deb
 
 # Install like any software
