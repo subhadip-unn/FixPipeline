@@ -5,6 +5,8 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+  release:
+    types: [published]
 
 jobs:
   build-deb:
@@ -42,5 +44,22 @@ jobs:
       with:
         files: deb_dist/*.deb
         generate_release_notes: true
+        tag_name: ${{ github.ref_name }}
+        name: FixPipeline ${{ github.ref_name }}
+        body: |
+          ## FixPipeline ${{ github.ref_name }}
+          
+          Professional CircleCI APK Auto-Fixer
+          
+          ### Installation:
+          ```bash
+          # pipx install (recommended)
+          pipx install git+https://github.com/subhadip-unn/FixPipeline.git
+          fixpipeline
+          
+          # Or download .deb package
+          wget https://github.com/subhadip-unn/FixPipeline/releases/latest/download/fixpipeline_1.0.0-1_all.deb
+          sudo dpkg -i fixpipeline_1.0.0-1_all.deb
+          ```
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
